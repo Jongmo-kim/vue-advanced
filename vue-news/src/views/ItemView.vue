@@ -7,7 +7,7 @@
         </div>
 
         <div class="user-description">
-          <router-link :to="`/user/${fetchedAskItem.user}`">
+          <router-link slot="username" :to="`/user/${fetchedAskItem.user}`">
             {{fetchedAskItem.user}}
           </router-link>
           <div class="time">
@@ -25,9 +25,10 @@
 
 <script>
 import {mapGetters} from 'vuex';
-
+import UserProfile from '../components/UserProfile';
 export default {
   computed : {
+    UserProfile,
     ...mapGetters(['fetchedAskItem']),
   },
   created(){
